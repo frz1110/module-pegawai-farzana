@@ -13,7 +13,7 @@
                         </div>
                         <div class="row">
                             <div class="col-4">Id Pegawai :</div>
-                            <div class="col-8"><span t-field="d.id_pegawai"/></div>
+                            <div class="col-8"><span t-field="d.id"/></div>
                         </div>
                         <div class="row">
                             <div class="col-4">Status :</div>
@@ -76,6 +76,7 @@
                                 <div class="col-4"><span t-field="ds.alasan"/></div>
                             </div>
                         </t>
+                        <br/><br/>
                     </t>    
                 </div>
             </t>
