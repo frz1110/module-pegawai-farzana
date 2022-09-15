@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'wizzard/pesan_wizzard_view.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/menu.xml',
@@ -34,7 +35,6 @@
         'views/absen_view.xml',
         'views/izin_view.xml',
         'views/role_view.xml',
-        'wizzard/pesan_wizzard_view.xml',
         'report/report.xml',
         'report/print_detail_pegawai.xml',   
     ],
