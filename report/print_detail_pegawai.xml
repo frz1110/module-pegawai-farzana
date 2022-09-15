@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_detail_pegawai_pdf">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2><b>Data Pegawai</b></h2>
+                    <t t-foreach="docs" t-as="d">
+                        <div class="row">
+                            <div class="col-4">Nama Pegawai :</div>
+                            <div class="col-8"><span t-field="d.name"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Id Pegawai :</div>
+                            <div class="col-8"><span t-field="d.id_pegawai"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Status :</div>
+                            <div class="col-8"><span t-field="d.status"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">Role Pekerjaan :</div>
+                            <div class="col-8"><span t-field="d.role"/></div>
+                        </div>
+                         <div class="row">
+                            <div class="col-4"><b>Informasi Pribadi</b></div>
+                        </div>
+                         <div class="row">
+                            <div class="col-4">Tanggal  :</div>
+                            <div class="col-8"><span t-field="d.tgl_lahir"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">No HP :</div>
+                            <div class="col-8"><span t-field="d.no_hp"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">No KTP :</div>
+                            <div class="col-8"><span t-field="d.no_ktp"/></div>
+                        </div>
+                         <div class="row">
+                            <div class="col-4">Alamat :</div>
+                            <div class="col-8"><span t-field="d.alamat"/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4"><b>Catatan Kehadiran</b></div>
+                        </div>
+                        <t t-foreach="d.absensi_ids" t-as="ds" style='border-style: solid;'> 
+                            <div class="row">
+                                <div class="col-4">Jam Masuk :</div>
+                                <div class="col-4"><span t-field="ds.jam_masuk"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Jam Keluar :</div>
+                                <div class="col-4"><span t-field="ds.jam_keluar"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Durasi Kerja :</div>
+                                <div class="col-4"><span t-field="ds.durasi_kerja"/></div>
+                            </div>
+                        </t>
+                         <div class="row">
+                            <div class="col-4"><b>Izin</b></div>
+                        </div>
+                        <t t-foreach="d.izin_ids" t-as="ds" style='border-style: solid;'> 
+                            <div class="row">
+                                <div class="col-4">Tanggal Mulai Izin :</div>
+                                <div class="col-4"><span t-field="ds.tgl_izin_mulai"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Tanggal Berakhir Izin :</div>
+                                <div class="col-4"><span t-field="ds.tgl_izin_akhir"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">Alasan :</div>
+                                <div class="col-4"><span t-field="ds.alasan"/></div>
+                            </div>
+                        </t>
+                    </t>    
+                </div>
+            </t>
+        </t>
+    </template>
+
+</odoo>

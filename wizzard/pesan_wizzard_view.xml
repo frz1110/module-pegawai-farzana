@@ -1,0 +1,59 @@
+<odoo>
+<!-- model.name form view -->
+<record id="pesan_pegawai_wizzard_view_form" model="ir.ui.view">
+    <field name="name">Kirim Pesan untuk HR</field>
+    <field name="model">pegawai.pesan_pegawai</field>
+    <field name="arch" type="xml">
+        <form string="Form Kirim Pesan untuk HR">
+            <sheet>
+                <group>
+                    <field name="pegawai_id"/>
+                    <field name="pesan"/>
+                </group>
+                <footer>
+                <button name="button_kirim_pesan" type="object" string="Kirim" class='btn btn-primary'/>
+                <button  string="Cancel" special='cancel' class="btn btn-danger" />
+                </footer>
+            </sheet>
+        </form>
+    </field>
+</record>
+<!-- model.name action window -->
+<record id="pesan_pegawai_wizzard_action" model="ir.actions.act_window">
+    <field name="name">Kirim Pesan untuk HR</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">pegawai.pesan_pegawai</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref=""/>
+    <field name="target">new</field> 
+</record>
+
+<!-- model.name form view -->
+<record id="pesan_pelamar_wizzard_view_form" model="ir.ui.view">
+    <field name="name">Kirim Pesan untuk HR</field>
+    <field name="model">pegawai.pesan_pelamar</field>
+    <field name="arch" type="xml">
+        <form string="Form Kirim Pesan untuk HR">
+            <sheet>
+                <group>
+                    <field name="pelamar_id"/>
+                    <field name="pesan"/>
+                </group>
+                <footer>
+                    <button name="button_kirim_pesan" type="object" string="Kirim" class='btn btn-primary'/>
+                    <button  string="Cancel" special='cancel' class="btn btn-danger" />
+                </footer>
+            </sheet>
+        </form>
+    </field>
+</record>
+<!-- model.name action window -->
+<record id="pesan_pelamar_wizzard_action" model="ir.actions.act_window">
+    <field name="name">Kirim Pesan untuk HR</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">pegawai.pesan_pelamar</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref=""/>
+    <field name="target">new</field> 
+</record>
+</odoo>

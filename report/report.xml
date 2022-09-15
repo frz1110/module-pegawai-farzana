@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+    <record id="report_detail_pegawai_pdf" model="ir.actions.report">
+        <field name="name">Detail Pegawai Pdf</field>
+        <field name="model">pegawai.pegawai</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pegawai.report_detail_pegawai_pdf</field>
+        <field name="report_file">pegawai.report_detail_pegawai_pdf</field>
+        <field name="binding_model_id" ref="model_pegawai_pegawai"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_daftar_pegawai_xlsx" model="ir.actions.report">
+        <field name="name">Pegawai Excel</field>
+        <field name="model">pegawai.pegawai</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">pegawai.report_daftar_pegawai_xlsx</field>
+        <field name="report_file">pegawai.report_daftar_pegawai_xlsx</field>
+        <field name="binding_model_id" ref="model_pegawai_pegawai"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_absensi_pegawai_xlsx" model="ir.actions.report">
+        <field name="name">Absensi Excel</field>
+        <field name="model">pegawai.absen</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">pegawai.report_absensi_pegawai_xlsx</field>
+        <field name="report_file">pegawai.report_absensi_pegawai_xlsx</field>
+        <field name="binding_model_id" ref="model_pegawai_absen"/>
+        <field name="binding_type">report</field>
+    </record>
+
+     <record id="report_izin_pegawai_xlsx" model="ir.actions.report">
+        <field name="name">Izin Excel</field>
+        <field name="model">pegawai.izin</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">pegawai.report_izin_pegawai_xlsx</field>
+        <field name="report_file">pegawai.report_izin_pegawai_xlsx</field>
+        <field name="binding_model_id" ref="model_pegawai_izin"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+
+    
+
+</odoo>

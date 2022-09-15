@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- pegawai.izin  tree view -->
+    <record id="pegawai_izin_view_tree" model="ir.ui.view">
+        <field name="name">Izin</field>
+        <field name="model">pegawai.izin</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="pegawai_id" />
+                <field name="tgl_izin_mulai"  />
+                <field name="tgl_izin_akhir" />
+                <field name="hari_izin"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+ 
+
+    <!-- pegawai.izin form view -->
+    <record id="pegawai_izin_view_form" model="ir.ui.view">
+        <field name="name">Izin</field>
+        <field name="model">pegawai.izin</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_confirm" type="object" string="Confirm" class="btn btn-primary" states="draft"/>
+                    <button name="action_approved" type="object" string="Approve" class="btn btn-primary" states="confirm"/>
+                    <button name="action_cancel" type="object" string="Cancel" class="btn btn-warning" states="confirm" confirm="Anda yakin meng-cancel Quotation ini?"/>
+                    <button name="action_draft" type="object" string="Kembali ke Draft" class="btn btn-danger" states="cancelled" confirm="Anda yakin untuk mengedit Quotation ini?"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approved"/>
+                </header>
+            <sheet>
+                <group>
+               <field name="pegawai_id"  attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                <field name="tgl_izin_mulai" attrs="{'readonly' : [('state', '!=', 'draft')]}" />
+                <field name="tgl_izin_akhir" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                <field name="alasan" attrs="{'readonly' : [('state', '!=', 'draft')]}"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pegawai.izin action window -->
+    <record id="pegawai_izin_action" model="ir.actions.act_window">
+        <field name="name">izin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pegawai.izin</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <!-- This Menu Item Must have a parent -->
+    <menuitem
+        id="pegawai_izin_menu_categ"
+        name="Izin"
+        parent="pegawai_menu_root"
+        action="pegawai_izin_action"
+        sequence="30"/>
+
+</odoo>

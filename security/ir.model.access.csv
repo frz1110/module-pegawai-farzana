@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pegawai_pegawai,access.pegawai.pegawai,model_pegawai_pegawai,,1,1,1,1
+access_pegawai_absen,access.pegawai.absen,model_pegawai_absen,,1,1,1,1
+access_pegawai_izin,access.pegawai.izin,model_pegawai_izin,,1,1,1,1
+access_pegawai_role,access.pegawai.role,model_pegawai_role,,1,1,1,1
+access_pegawai_person,access.pegawai.person,model_pegawai_person,,1,1,1,1
+access_pegawai_pelamar,access.pegawai.pelamar,model_pegawai_pelamar,,1,1,1,1
+access_pegawai_pesan,access.pegawai.pesan,model_pegawai_pesan,,1,1,1,1
+access_pegawai_pesan_pegawai,access.pegawai.pesan_pegawai,model_pegawai_pesan_pegawai,,1,1,1,1
+access_pegawai_pesan_pelamar,access.pegawai.pesan_pelamar,model_pegawai_pesan_pelamar,,1,1,1,1

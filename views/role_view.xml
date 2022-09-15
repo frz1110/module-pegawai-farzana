@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- pegawai.role  tree view -->
+    <record id="pegawai_role_view_tree" model="ir.ui.view">
+        <field name="name">Role Pekerjaan</field>
+        <field name="model">pegawai.role</field>
+        <field name="arch" type="xml">
+            
+            <tree>
+            
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="pegawai_intern" />
+                <field name="pegawai_part"  />
+                <field name="pegawai_full" />
+                <field name="pegawai_total" />
+                
+            </tree>
+        </field>
+    </record>
+
+ 
+
+    <!-- pegawai.role form view -->
+    <record id="pegawai_role_view_form" model="ir.ui.view">
+        <field name="name">Role Pekerjaan</field>
+        <field name="model">pegawai.role</field>
+        <field name="arch" type="xml">
+            <form>
+            <sheet>
+                <group>
+                    <field name="name"  placeholder="ex: Software Programmer"/>
+                </group>
+                <group string="Detail">
+                    <field name="job_desc"/>
+                    <field name="req"/>
+                </group>
+                <group string="Jumlah Pegawai">
+                    <field name="pegawai_intern" />
+                    <field name="pegawai_part"  />
+                    <field name="pegawai_full" />
+                    <field name="pegawai_total" />
+                </group>
+                <group string="List Pegawai">
+                    <field name="pegawai_id" readonly="1" />
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pegawai.role action window -->
+    <record id="pegawai_role_action" model="ir.actions.act_window">
+        <field name="name">role</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pegawai.role</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+     <!-- This Menu Item Must have a parent -->
+    <menuitem
+        id="pegawai_role_menu_categ"
+        name="Role Pekerjaan"
+        parent="pegawai_menu_root"
+        action="pegawai_role_action"
+        sequence="15"/>
+</odoo>
