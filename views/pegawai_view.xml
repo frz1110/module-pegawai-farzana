@@ -73,7 +73,7 @@
     <menuitem
         id="pegawai_list_menu_categ"
         name="List Pegawai"
-        parent="pegawai_menu_categ"
+        parent="pegawai_menu_root"
         action="pegawai_list_action"
         sequence="10"/>
 

@@ -41,10 +41,7 @@ class AbsenXlsx(models.AbstractModel):
             sheet.write(row, col+2, "Jam Keluar", bold)
             sheet.write(row, col+3, "Durasi Kerja", bold)
             
-            absen_pegawai = request.env['pegawai.absen'].search([('pegawai_id','=',pegawai.id)])
-           
-            for obj in absen_pegawai:
-                print(obj.tanggal)
+            for obj in absen:
                 row += 1
                 sheet.write(row, col, obj.tanggal)
                 sheet.write(row, col+1, obj.jam_masuk)
@@ -55,7 +52,7 @@ class IzinXlsx(models.AbstractModel):
     _name = 'report.pegawai.report_izin_pegawai_xlsx'
     _inherit = 'report.report_xlsx.abstract'
 
-    def generate_xlsx_report(self, workbook, data, absen):
+    def generate_xlsx_report(self, workbook, data, izin):
         pegawai_daftar  = request.env['pegawai.pegawai'].search([])
         for pegawai in pegawai_daftar:
             sheet = workbook.add_worksheet(f'{pegawai.name[:31]}')
@@ -65,10 +62,8 @@ class IzinXlsx(models.AbstractModel):
             sheet.write(row, col+1, "Tanggal Berakhir", bold)
             sheet.write(row, col+2, "Alasan", bold)
             sheet.write(row, col+3, "Jumlah Hari Izin", bold)
-            
-            absen_pegawai = request.env['pegawai.izin'].search([('pegawai_id','=',pegawai.id)])
            
-            for obj in absen_pegawai:
+            for obj in izin:
                 row += 1
                 sheet.write(row, col, obj.tgl_izin_mulai)
                 sheet.write(row, col+1, obj.tgl_izin_akhir)

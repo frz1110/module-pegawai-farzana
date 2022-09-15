@@ -22,4 +22,3 @@ class PesanPelamar(models.TransientModel):
      _inherit='pegawai.pesan'
 
      pelamar_id = fields.Many2one(comodel_name='pegawai.pelamar', string='Nama Pelamar')
-     pesan = fields.Text(string='Pesan untuk HR')

@@ -53,8 +53,8 @@
     <menuitem
         id="pegawai_calon_menu_categ"
         name="Calon Pegawai"
-        parent="pegawai_menu_categ"
+        parent="pegawai_menu_root"
         action="pegawai_calon_action"
-        sequence="20"/>
+        sequence="12"/>
 
 </odoo>
